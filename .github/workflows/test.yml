@@ -21,8 +21,9 @@ jobs:
       - run: |
           jf npm-config --repo-resolve=default-npm-virtual --repo-deploy=default-npm-virtual
 
-      - name: Build your project
+      - name: Conditional Deploy
         run: |
+          # Build your project
           jf npm install
+          # Deploy to configured Artifactory only if scan completed successfully
           jf npm publish --scan
-  
