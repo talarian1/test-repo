@@ -19,7 +19,7 @@ jobs:
         env:
           JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
       - run: |
-          jf npm-config --repo-resolve=“default-npm-virtual” --repo-deploy=“default-npm-virtual”
+          jf npm-config --repo-resolve=default-npm-virtual --repo-deploy=default-npm-virtual
 
       - name: Build your project
         run: |
