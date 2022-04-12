@@ -17,12 +17,12 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v2
         env:
           JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
-        run: |
+      - run: |
           jf npm-config--repo-resolve=“default-npm-remote” --repo-deploy=“default-npm-remote”
 
       - name: Build your project
         uses: actions/checkout@v2
-        run: |
+      - run: |
           jf npm install
 
       - name: Conditional Deploy 
